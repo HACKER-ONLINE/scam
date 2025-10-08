@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scam Awareness Slideshow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .slide {
+      display: none;
+      padding: 40px;
+      text-align: center;
+    }
+    .active {
+      display: block;
+    }
+    .navigation {
+      text-align: center;
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slide active">
+  <h1>Welcome to Scam Awareness</h1>
+  <p>Learn how to identify and protect yourself from online scams.</p>
+</div>
+
+<div class="slide">
+  <h2>Common Types of Scams</h2>
+  <ul>
+    <li>Phishing Emails</li>
+    <li>Fake Tech Support</li>
+    <li>Online Shopping Fraud</li>
+    <li>Lottery Scams</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Tips to Stay Safe</h2>
+  <ul>
+    <li>Don't click suspicious links</li>
+    <li>Verify sender identity</li>
+    <li>Use strong passwords</li>
+    <li>Report suspicious activity</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Scam Example</h2>
+  <p>This is an example of a ransomware-style scam image used for educational purposes.</p>
+  <img src="image.png" alt="Ransomware Example">
+</div>
+
+<div class="slide">
+  <h2>Thank You</h2>
+  <p>Stay alert and help others stay safe from scams.</p>
+</div>
+
+<div class="navigation">
+  <button onclick="prevSlide()">Previous</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+</script>
+
+</body>
+</html>
